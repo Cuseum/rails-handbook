@@ -33,97 +33,109 @@ Factory is an ambiguous term that stands for a method or class that supposed to 
 ### Simple factory
 Class that has one creation method with a large conditional.
 
-### Problem
-You have a method which instantiates a different type of object depending on a particular parameter.
+<details>
+  <summary>Problem</summary>
+  You have a method which instantiates a different type of object depending on a particular parameter.
+</details>
 
-### Solution
-Read more about *Simple Factory* [here](https://www.sihui.io/design-pattern-factory/).
-
-This is considered an intermediate step of introducing [Factory method](#factory-method) or [Abstract factory](#abstract-factory) patterns.
+<details>
+  <summary>Solution</summary>
+  Read more about <a href="https://www.sihui.io/design-pattern-factory/">Simple Factory</a>.
+  <br>
+  This is considered an intermediate step of introducing <a href="#factory-method">Factory method</a> or <a href="#abstract-factory">Abstract factory</a> patterns.
+</details>
 
 ### Factory method
 Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
-### Problem
-Your application contains a `Truck` class that is used everywhere and now a new `Ship` class needs to be introduced that will be used in the same places as `Truck` but with different operations.
+<details>
+  <summary>Problem</summary>
+  Your application contains a <b>Truck</b> class that is used everywhere and now a new <b>Ship</b> class needs to be introduced that will be used in the same places as <b>Truck</b> but with different operations.
+</details>
 
-### Solution
-Read more about *Factory method* [here](https://refactoring.guru/design-patterns/factory-method).
+<details>
+  <summary>Solution</summary>
+  Read more about <b>Factory method</b> <a href="https://refactoring.guru/design-patterns/factory-method">here</a>.
+  <br>
 
-[Ruby example](https://refactoring.guru/design-patterns/factory-method/ruby/example).
+  <a href="https://refactoring.guru/design-patterns/factory-method/ruby/example">Ruby example</a>.
+  <br>
+  If you feel confused about factory comparisons, read more about them <a href="https://refactoring.guru/design-patterns/factory-comparison">here</a>.
+</details>
 
-If you feel confused about factory comparisons, read more about them [here](https://refactoring.guru/design-patterns/factory-comparison).
 
 ### Abstract factory
 One abstraction ladder step higher from the [Factory method](#factory-method) will get you to this design pattern. It lets you produce families of related objects without specifying their concrete classes.
 
-### Solution
-Read more about *Abstract factory* [here](produce families of related objects without specifying their concrete classes).
-
-[Ruby example](https://refactoring.guru/design-patterns/factory-method/ruby/example).
+<details>
+  <summary>Solution</summary>
+  Read more about <b>Abstract factory</b> <a href="https://refactoring.guru/design-patterns/abstract-factory">here</a>.
+  <br>
+  <a href="https://refactoring.guru/design-patterns/factory-method/ruby/example">Ruby example</a>.
+</details>
 
 ## Special object
 
 ### Form object
 Simplify record operations by keeping logic in them.
 
-### Problem
+#### Problem
 * Your controllers are huge and you want to make them more readable by extracting some of its logic, but don't want to clutter your models.
 * Your opinion is that models shouldn't have validations.
 * You have a virtual attribute that works only on a couple of places, but doesn't make sense to add `attr_accessor` to the model.
 
-### Solution
+#### Solution
 Read more about *Form object* [here](https://thoughtbot.com/blog/activemodel-form-objects).
 _Note_: Form objects work great with [active_type](https://github.com/makandra/active_type).
 
 ### Value object
 A small simple object, like a date range or location, whose equality isn’t based on identity.
 
-### Problem
+#### Problem
 The problem can be spotted by finding:
 * attributes that don't make sense on their own
 * logic that is tightly coupled with primitives (attributes with behaviour - methods)
 
-### Solution
+#### Solution
 Read more about *Value object* [here](https://revs.runtime-revolution.com/value-objects-in-ruby-on-rails-9df64bc8db34).
 
 ### Null object
 Instead of returning null, or some odd value, return a Special Case that has the same interface as what the caller expects.
 
-### Problem
+#### Problem
 You have a lot of conditionals scattered around many classes or view files that ask the same thing. It's usually a low-level error handling part that covers calls to `nil`s.
 
-### Solution
+#### Solution
 Read more about *Null object* [here](https://thoughtbot.com/blog/handling-associations-on-null-objects).
 
 ### Query object
 Represent a database query or a set of database queries related to the same table.
 
-### Problem
+#### Problem
 * You want to simplify a class that fetches some data from your database using a complex query
 * You want to simplify your model scope to use another class, instead of keeping the query in the caller
 * You have a complex SQL query that is used in multiple callers
 
-### Solution
+#### Solution
 Read more about *Query object* [here](https://medium.flatstack.com/query-object-in-ruby-on-rails-56ea434365f0).
 
 ### Service object
 Concentrate the core logic of a request operation into a separate object.
 
-### Problem
+#### Problem
 You have a complex set of operations that need to be executed in order synchronously or asynchronously.
 
-### Solution
+#### Solution
 Read more about *Service object* [here](http://brewhouse.io/blog/2014/04/30/gourmet-service-objects.html).
 _Note_: Service objects can easily become a code smell if not handled properly. If you find yourself with a service object that has too many methods and/or becomes generally unreadable and hard to understand, you might have to find a [bounded context](https://blog.carbonfive.com/bring-clarity-to-your-monolith-with-bounded-contexts/) or use one of the design patterns mentioned in this chapter.
 
 ### Builder
 Unlike the factories, this design pattern doesn't have a common interface. That makes it possible to different products, using the same construction process.
 
-### Problem
+#### Problem
 You have a complex object which goes through many *steps* where you're assigning many fields and relationships. Especially useful for cleaning up classes that have a large amount of method parameters in the constructor that aren't always used.
 
-### Solution
+#### Solution
 Read more about *Builder* [here](https://refactoring.guru/design-patterns/builder).
 
 [Ruby example](https://refactoring.guru/design-patterns/builder/ruby/example).
@@ -131,10 +143,10 @@ Read more about *Builder* [here](https://refactoring.guru/design-patterns/builde
 ### Prototype
 Copy existing objects without making your code dependent on their classes.
 
-### Problem
+#### Problem
 You have an ActiveRecord object with lots of relationships that you want to clone.
 
-### Solution
+#### Solution
 Read more about *Prototype* [here](https://refactoring.guru/design-patterns/prototype).
 
 [Ruby example](https://refactoring.guru/design-patterns/prototype/ruby/example).
@@ -143,10 +155,10 @@ _Note_: The Ruby example uses the usual Marshalling hack to make a deep copy. Bu
 ### Singleton
 Ensure a class to only have 1 object.
 
-### Problem
+#### Problem
 You need a way to only produce the same instance of a class all over your code.
 
-### Solution
+#### Solution
 Read more about *Singleton* [here](https://refactoring.guru/design-patterns/singleton).
 
 [Ruby example](https://refactoring.guru/design-patterns/singleton/ruby/example).
@@ -155,10 +167,10 @@ _Note_: Singleton has almost the same pros and cons as global variables. Althoug
 ### Adapter
 Allow your incompatible objects to collaborate.
 
-### Problem
+#### Problem
 You need a way to transform your ActiveRecord object (or collection) into a valid XML request body.
 
-### Solution
+#### Solution
 Read more about *Adapter* [here](https://refactoring.guru/design-patterns/adapter).
 
 [Ruby example](https://refactoring.guru/design-patterns/adapter/ruby/example).
@@ -166,10 +178,10 @@ Read more about *Adapter* [here](https://refactoring.guru/design-patterns/adapte
 ### Bridge
 Split a large class or a set of closely related classes into two separate hierarchies
 
-### Problem
+#### Problem
 You're planning to add new subclasses which would complicate the class hierarchy.
 
-### Solution
+#### Solution
 Transform it into several related hierarchies.
 Read more about *Bridge* [here](https://refactoring.guru/design-patterns/bridge).
 
@@ -178,10 +190,10 @@ Read more about *Bridge* [here](https://refactoring.guru/design-patterns/bridge)
 ### Composite
 Compose objects into a tree-like structure and work with the it as if it was a singular object.
 
-### Problem
+#### Problem
 You need a way to associate an ActiveRecord object with other ActiveRecord objects of the same class, which in fact may also contain objects of the same class.
 
-### Solution
+#### Solution
 Read more about *Composite* [here](https://refactoring.guru/design-patterns/composite).
 
 [Ruby example](https://refactoring.guru/design-patterns/composite/ruby/example).
@@ -189,11 +201,11 @@ Read more about *Composite* [here](https://refactoring.guru/design-patterns/comp
 ### Decorator
 Add new behaviour to objects by placing them inside special wrapper objects.
 
-### Problem
+#### Problem
 You need a method that is using an ActiveRecord object attribute during the operation.
 You don't want to add the new method to the model cause it's only used in 1 place.
 
-### Solution
+#### Solution
 Read more about *Decorator* [here](https://refactoring.guru/design-patterns/decorator).
 
 [Ruby example](https://refactoring.guru/design-patterns/decorator/ruby/example).
@@ -202,12 +214,12 @@ _Note_: The [draper](https://github.com/drapergem/draper) gem does exactly what 
 ### Facade
 Provides a well documented, simplified and limited interface to a more complex system.
 
-### Problem
+#### Problem
 You want to create an interface with only a couple of public methods that delegate the call to:
 * other methods of a gem
 * other attributes of an API
 
-### Solution
+#### Solution
 Read more about *Facade* [here](https://refactoring.guru/design-patterns/facade).
 
 [Ruby example](https://refactoring.guru/design-patterns/facade/ruby/example).
@@ -215,11 +227,11 @@ Read more about *Facade* [here](https://refactoring.guru/design-patterns/facade)
 ### Command
 Encapsulate your requests as objects which get called using the same interface, thereby giving you more flexibility in object construction.
 
-### Problem
+#### Problem
 You have a class that calls different services instantiated with different params depending on a particular parameter.
 Easily detectable if you have a `case` statement with calls to services.
 
-### Solution
+#### Solution
 Read more about *Command* [here](https://refactoring.guru/design-patterns/command).
 
 [Ruby example](https://refactoring.guru/design-patterns/command/ruby/example).
@@ -231,10 +243,10 @@ _Notes_:
 ### State
 Extracts state-related behaviours into separate state classes and forces the original object to delegate the work to an instance of these classes, instead of acting on its own.
 
-### Problem
+#### Problem
 You need to convert massive switch-base state machines into objects that the original object calls instead of acting on its own.
 
-### Solution
+#### Solution
 Read more about *State* [here](https://refactoring.guru/design-patterns/state).
 
 [Ruby example](https://refactoring.guru/design-patterns/state/ruby/example).
@@ -242,10 +254,10 @@ Read more about *State* [here](https://refactoring.guru/design-patterns/state).
 ### Strategy
 Turn a set of behaviours into objects and make them interchangeable inside the original context object.
 
-### Problem
+#### Problem
 Your application requirements changed and now you have to communicate with a 2nd API that returns same type of data as the 1st one.
 
-### Solution
+#### Solution
 Read more about *Strategy* [here](https://refactoring.guru/design-patterns/strategy).
 
 [Ruby example](https://refactoring.guru/design-patterns/strategy/ruby/example).
@@ -253,10 +265,10 @@ Read more about *Strategy* [here](https://refactoring.guru/design-patterns/strat
 ### Template Method
 Define a skeleton of an algorithm in a base class and let subclasses override the steps without changing the overall algorithm’s structure.
 
-### Problem
+#### Problem
 You have many classes that solve the same semantical issue (importing and data processing from files, JSON/CSV/Excel) and have the same algorithm, but the parsing is different.
 
-### Solution
+#### Solution
 Read more about *Template Method* [here](https://refactoring.guru/design-patterns/template-method).
 
 [Ruby example](https://refactoring.guru/design-patterns/template-method/ruby/example).
