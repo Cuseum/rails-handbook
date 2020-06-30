@@ -22,7 +22,7 @@ Feature branches are **always** branched out of `master`. They are also merged f
 We use the `staging` server so that our QA team could test our applications in an environment that is as close to production as possible. We can also work on multiple features in parallel. Those fixes and features need to be verified by our QA team and sometimes by the client as well. Sometimes, a feature may be ready for production while others aren't and are still being worked on. In that case, the `staging` branch contains multiple features, but only one needs to end up on `master`. That is why we do not branch out of `staging` and do not merge `staging` into `master`.
 
 ## Note on the workflow during early development:
-While the application has still not been deployed to a production server, you can omit the `staging` branch. Once the production server has been set up, and the first deploy is up, create a `staging` branch.
+While the application has not been deployed to a production server yet, you can omit the `staging` branch. Once the production server has been set up, and the first deploy is up, create a `staging` branch.
 
 ## Other important notes on using Git:
 **Commit messages are important**, especially since Git tracks your changes and then displays them as commits once they've been pushed to the server. By writing clear commit messages, you can make it easier for other people to follow and provide feedback.
