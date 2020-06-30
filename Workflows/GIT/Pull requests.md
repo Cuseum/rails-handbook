@@ -1,9 +1,9 @@
 Pull requests initiate discussion about your commits. Since they're tightly integrated with the underlying Git repository, everyone can see exactly what changes will be merged if they accept your request.
 
 ## New pull request
-Once the feature or fix is done, a PR for it should be opened.
+Once a feature or fix is done, a PR for it should be opened.
 
-It's essential to write good Pull Request descriptions. Reviewers will usually read it before
+It's essential to write a good pull request description. Reviewers will usually read it before
 looking at the diff, so make sure it gives them enough context to know what they are looking at.
 
 Another purpose of a good description is to provide the documentation for a future reference.
@@ -12,7 +12,7 @@ the motivation behind the implementation of a specific feature. Please note that
 from the description should also be added to the main documentation in the project as a central reference point
 where the latest state of the project is documented.
 
-A new rails project created with the [Infinum rails template](https://github.com/infinum/default_rails_template)
+A new Rails project created with the [Infinum rails template](https://github.com/infinum/default_rails_template)
 includes a [pull request description template](https://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository).
 The template is defined in the `rails_project/.github/PULL_REQUEST_TEMPLATE.md` file.
 
@@ -52,7 +52,7 @@ The description is a good place to include questions that came up during develop
 
 This is also a good place to talk about the performance and security considerations if there are any.
 
-## Default Pull Request Reviewers
+## Default pull request reviewers
 It's a bit tedious to add the same reviewers to pull requests over and over again. Github allows us to set a
 list of default PR reviewers.
 
