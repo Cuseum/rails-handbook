@@ -14,7 +14,7 @@ As we use [Productive](https://productive.io) to manage our tasks, we use **feat
 * _fix_ - non-critical bugfix, improvement, paying the technical debt. Goes through the code review process.
 * _hotfix_ - time sensitive critical bugfix, that should be deployed to production as soon as possible. It is not necessary for it to go through a code review, but it should be revisited at a later stage, and properly fixed or improved.
 
-Feature branches are **always** branched out of `master`. They are also merged first into `staging`, and then into `master` if they are ready for production.
+Feature branches should always be branched out of `master`. They are also merged first into `staging`, and then into `master` if they are ready for production.
 
 **Never branch out of the `staging` branch and never merge `staging` into `master`**
 
@@ -29,6 +29,6 @@ While the application has not been deployed to a production server yet, you can 
 Commits should have a descriptive subject as well as a quick explanation of the reason for the change in the commit body. This makes it easier to check changes in the code editor as you do not have to find the pull request and open it on GitHub.
 Read more about writing proper commit messages [here](http://chris.beams.io/posts/git-commit/).
 
-**Make small commits, following the Single Responsibility Principle in Git.** This makes commits easier to review when making pull requests, and it's easier to notice what's going on when something goes wrong.
+**Follow the Single Resposibility Principle in git commits.** This makes commits easier to review when making pull requests, and it's easier to notice what's going on when something's wrong.
 
 **Don't use `git add .`** Review what you're adding to your repo — this is the #1 cause of making unwanted changes.
